@@ -2,7 +2,7 @@ package com.hr.personnel;
 
 import java.time.LocalDate;
 
-public class Employee {
+public abstract class Employee {
 
   // Fields => private to prevent anyone from directly accessing them
   // Reason: maintainability / because of abstraction: don't want to expose implementation detail/data/state directly)
@@ -10,7 +10,6 @@ public class Employee {
   private LocalDate hireDate;
 
   // Constructors
-
 
   public Employee() {
   }
@@ -21,13 +20,14 @@ public class Employee {
   }
 
   // Methods
-  public String getEmployeeInfo() {
-    return "name = " + name + ", hireDate = " + hireDate;
-  }
+  public abstract String getEmployeeInfo();
 
   public String work() {
     return name + " worked";
   }
+
+  // Parent method that child class will override. WOn't be used directly
+  public abstract double computeMonthlyCompensation();
 
   // Getters and Setters
   public String getName() {
