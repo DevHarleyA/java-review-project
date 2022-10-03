@@ -30,6 +30,11 @@ public class HourlyEmployee extends Employee{
     return this.getName() + " is an hourly employee who works " + this.getHoursWorkedPerMonth() + " a month for " + this.getHourlyRate() + " an hour.";
   }
 
+  @Override
+  public double computeMonthlyTaxToPay() {
+    return computeMonthlyCompensation() * HOURLY_TAX_RATE;
+  }
+
   // Getters and Setters
 
   public int getHoursWorkedPerMonth() {

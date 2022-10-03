@@ -30,4 +30,11 @@ public class SalariedEmployeeTest {
 
     Assertions.assertThat(info).isEqualTo("George was hired as a salaried employee on 2022-05-28. They are paid 3000.0 a month.");
   }
+
+  @Test
+  public void computeMonthly_test() {
+    double tax = george.computeMonthlyTaxToPay();
+
+    Assertions.assertThat(tax).isEqualTo(900);
+  }
 }

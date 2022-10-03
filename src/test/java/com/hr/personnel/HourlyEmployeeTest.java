@@ -29,4 +29,11 @@ public class HourlyEmployeeTest {
 
     Assertions.assertThat(info).isEqualTo("Helen is an hourly employee who works 160 a month for 20.0 an hour.");
   }
+
+  @Test
+  public void computeMonthly_test() {
+    double tax = helen.computeMonthlyTaxToPay();
+
+    Assertions.assertThat(tax).isEqualTo(800);
+  }
 }

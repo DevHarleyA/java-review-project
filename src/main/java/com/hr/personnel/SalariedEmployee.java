@@ -26,6 +26,11 @@ public class SalariedEmployee extends Employee {
     return this.getName() + " was hired as a salaried employee on " + this.getHireDate() + ". They are paid " + this.getMonthlySalary() + " a month.";
   }
 
+  @Override
+  public double computeMonthlyTaxToPay() {
+    return computeMonthlyCompensation() * SALARIED_TAX_RATE;
+  }
+
   // Getter and Setter Method
   public double getMonthlySalary() {
     return monthlySalary;
